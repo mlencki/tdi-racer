@@ -17,7 +17,7 @@ public class ChunkScript: MonoBehaviour
         this.speed = this.gameStateManager.gameSpeed;
     }
 	
-	public void Update ()
+    public void Update ()
     {
         this.UpdateChunkSpeed();
 
@@ -25,7 +25,7 @@ public class ChunkScript: MonoBehaviour
             this.chunkManager.chunkList.RemoveAt(1);
             Destroy(this.gameObject);
         }
-	}
+    }
 
     public void FixedUpdate()
     {
