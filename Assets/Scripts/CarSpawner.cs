@@ -18,18 +18,16 @@ public class CarSpawner: MonoBehaviour
         StartCoroutine("SpawnCar");
     }
 	
-	public void Update ()
+    public void Update ()
     {
-		if(this.gameStateManager.gameOver)
-        {
+        if(this.gameStateManager.gameOver) {
             Destroy(this);
         }
-	}
+    }
 
     protected IEnumerator SpawnCar()
     {
-        while(!this.gameStateManager.gameOver)
-        {
+        while(!this.gameStateManager.gameOver) {
             InstantiateRandomCar();
             yield return new WaitForSeconds(8f / (this.gameStateManager.gameSpeed * this.gameStateManager.gameSpeed));
         }
@@ -39,8 +37,7 @@ public class CarSpawner: MonoBehaviour
     {
         Object[] carList = Resources.LoadAll("Cars", typeof(GameObject));
 
-        foreach (GameObject carResource in carList)
-        {
+        foreach (GameObject carResource in carList) {
             GameObject car = (GameObject)carResource;
             this.availableCars.Add(car);
         }
@@ -55,8 +52,7 @@ public class CarSpawner: MonoBehaviour
 
         GameObject newCar = Instantiate(randomCar, lanePosition, Quaternion.identity);
 
-        if (randomLane < 2)
-        {
+        if (randomLane < 2) {
             newCar.transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
         }
     }
