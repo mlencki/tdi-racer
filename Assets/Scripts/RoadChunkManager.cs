@@ -15,7 +15,7 @@ public class RoadChunkManager: MonoBehaviour
         this.gameStateManager = GameObject.Find("GameStateManager").GetComponent<GameStateManager>();
     }
 	
-	public void Update ()
+    public void Update ()
     {
         if (this.CanInstantiateNewChunk()) {
             this.InstantiateNewChunk();
