@@ -23,7 +23,7 @@ public class CarScript: MonoBehaviour
         }
     }
 	
-	public void Update ()
+    public void Update ()
     {
         if (this.IsDestroyable())
         {
