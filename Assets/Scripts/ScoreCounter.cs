@@ -9,12 +9,12 @@ public class ScoreCounter: MonoBehaviour
     protected float metersTraveled = 0;
     protected Text scoreText;
 
-	public void Start ()
+    public void Start ()
     {
         this.gameStateManager = GameObject.Find("GameStateManager").GetComponent<GameStateManager>();
         this.scoreText = GameObject.Find("Canvas").transform.Find("ScoreText").GetComponent<Text>();
         this.StartCoroutine("RecountScore");
-	}
+    }
 
     public void Update()
     {
